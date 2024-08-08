@@ -1,0 +1,217 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+    color: #e0e0e0;
+}
+
+.parallax {
+    background-image: url('https://source.unsplash.com/1600x900/?technology');
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+header {
+    text-align: center;
+    padding: 80px 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    animation: fadeInDown 1s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    max-width: 1000px;
+    margin: -100px auto 50px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.card {
+    background-color: #1e1e1e;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 12px;
+    padding: 20px;
+    width: 100%;
+    max-width: 460px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+    opacity: 0;
+    transform: translateY(20px);
+    color: #ffffff;
+    border-left: 5px solid #f28e2c;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateY(5deg);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.skills {
+    width: 100%;
+    position: relative;
+}
+
+.carousel-container {
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.carousel-slide {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+    width: calc(100% * 8); /* Total number of skill cards */
+}
+
+.skill-card {
+    min-width: calc(100% / 3); /* Adjust width for visible items */
+    box-sizing: border-box;
+    padding: 20px;
+    margin: 10px;
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    text-align: center;
+    flex: 0 0 auto;
+    height: 200px; /* Make the cards square */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.nav-btn {
+    background: none;
+    border: none;
+    color: #f28e2c;
+    font-size: 24px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+}
+
+#prevBtn {
+    left: 10px;
+}
+
+#nextBtn {
+    right: 10px;
+}
+
+.nav-btn:hover {
+    color: #4e79a7;
+}
+
+h2 {
+    font-size: 26px;
+    font-weight: bold;
+    color: #f28e2c;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #f28e2c;
+    margin-top: 5px;
+    transition: width 0.5s ease-out;
+}
+
+h2:hover::after {
+    width: 100%;
+}
+
+a {
+    color: #f28e2c;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #4e79a7;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.appear {
+    opacity: 1;
+    transform: translateY(0px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin: 20px;
+        padding: 15px;
+    }
+    
+    header h1 {
+        font-size: 24px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+
+    .carousel-slide {
+        width: calc(100% * 8);
+    }
+
+    .skill-card {
+        min-width: 100%;
+    }
+}
